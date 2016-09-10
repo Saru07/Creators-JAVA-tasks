@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+
+a {
+	display:block;
+	text-decoration:none;
+	color:white;	
+}
+ 
+ button {
+ 	height:40px;
+ 	width:100px;
+ 	background-color:black;
+ 	border-color:black;
+ 	border-radius:10px;
+ 	
+ }
