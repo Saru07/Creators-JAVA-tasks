@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Image click count</title>
+
+	<style type="text/css">
+		img {
+			height: 200px;
+			width: 200px;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		window.addEventListener("load", myFunction);
+		
+		function myFunction(){
+			var elm = document.getElementsByClassName('image');			
+			for(var i = 0; i < elm.length; i++)
+				elm[i].addEventListener("click", function() {
+					var clk = this.parentNode.getElementsByClassName('display')[0];
+					var cnt = clk.getAttribute('data-clicks');
+					clk.setAttribute('data-clicks',(parseInt(cnt)+1));
+					clk.innerHTML = (parseInt(cnt)+1);
+				})
+			}
+
+	</script>
+</head>
+<body>
+	<div>
+		<img class="image" src="img1.jpg">
+		<p class = "display" data-clicks="0">0</p>
+	</div>
+	<div>
+		<img class="image" src="img2.jpg">
+		<p class = "display" data-clicks="0">0</p>
+	</div>
+	<div>
+		<img class="image" src="img3.jpg">
+		<p class = "display" data-clicks="0">0</p>
+	</div>
+	<div>
+		<img class="image" src="img4.jpg">
+		<p class = "display" data-clicks="0">0</p>
+	</div>
+	<div>
+		<img class="image" src="img5.jpg">
+		<p class = "display" data-clicks="0">0</p>
+	</div>
+</body>
+</html>
