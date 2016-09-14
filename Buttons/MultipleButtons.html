@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiple Buttons</title>
+
+	<style type="text/css">
+		.ctx{
+			display: inline-block;
+		}
+
+		.btnText {
+			display: none;
+		}
+	</style>
+
+	<script type="text/javascript">
+		window.addEventListener("load", myfunction);
+
+		function resetDOM() {
+			var text = document.getElementsByClassName('btnText');
+			for(var i = 0; i < text.length; i ++) {
+				text[i].style = 'display:none;';
+			}
+		}
+
+		function myfunction() {
+			var elm = document.getElementsByClassName('btn');
+			for(var i = 0; i < elm.length; i++) {
+				elm[i].addEventListener("click", function() {
+					var elem = this.parentNode.getElementsByClassName('btnText')[0];
+					resetDOM();
+					elem.style = 'display:block;';
+				} );
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class = "ctx">
+		<button class = "btn"> Button 1 </button>
+		<div class="btnText">This is Button 1</div>
+	</div>
+	<div class="ctx">
+		<button class = "btn"> Button 2 </button>
+		<div class="btnText">This is Button 2</div>
+	</div>
+	<div class="ctx">
+		<button class = "btn"> Button 3 </button>
+		<div class="btnText">This is Button 3</div>
+	</div>
+	<!--<div class="btnText">This is Button 1</div>
+	<div class="btnText">This is Button 2</div>
+	<div class="btnText">This is Button 3</div>-->
+</body>
+</html>
