@@ -1,0 +1,1 @@
+This folder contains files that uses ajax to process data 
