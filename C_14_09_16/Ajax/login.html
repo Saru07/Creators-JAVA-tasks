@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX Request</title>
+<link rel="stylesheet" href="userLogin.css"/>
+<script type="text/javascript">
+function resetDOM() {
+	var elm = document.getElementById('input');
+	elm.style = 'display:none';
+}
+function loadData(datas) {
+	var strg = document.getElementById('data');
+	var str = '<table class = \"info\">\n<thead><tr><th>ID</th><th>USERNAME</th><th>PASSWORD</th></thead><tbody>';
+	datas = JSON.parse(datas);
+	if(datas.length < 1) {
+		alert("NO SUCH USER");
+	}
+	else {
+		resetDOM();
+	for(var i = 0; i < datas.length; i++) {
+		console.log(datas[i]);
+		str += '<tr><td>'+datas[i].id+'</td><td>'+datas[i].user+'</td><td>'+datas[i].password+'</td></tr>\n'
+	}
+	str += '</tbody></table>\n';
+	console.log(str);
+	strg.innerHTML = str;
+	}
+}
+function addClickEvent() {
+	var btnElem = document.getElementById('btn');
+	
+	btnElem.addEventListener('click', function(){		
+		var xhr = new XMLHttpRequest();
+		var name = document.myForm.cuser.value;
+		var pass = document.myForm.cpass.value;
+		xhr.open('get', 'login?cuser='+name+'&cpass='+pass);
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200) {
+				loadData(this.responseText);
+			}
+		}
+	});
+}
+window.addEventListener('load', addClickEvent);
+</script>
+</head>
+<body>
+
+<div id = "input">
+<form name = "myForm">
+	<input type="text" name = "cuser" placeholder="User Name" />
+	<input type="password" name = "cpass" placeholder="Password" />
+</form>
+	<button id="btn" >Login</button>
+</div>
+<div id="data"></div>
+</body>
+</html>
