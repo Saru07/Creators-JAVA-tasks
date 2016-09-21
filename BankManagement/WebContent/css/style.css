@@ -1,0 +1,129 @@
+@CHARSET "ISO-8859-1";
+
+header, footer, body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	display: block;
+	font-size: 16px;
+	font-family: Arial;
+}
+
+*, *:hover, *:focus {
+	outline:none;
+}
+
+header, footer {
+	background-color: #BDC3C7;
+	height:50px;
+}
+
+.content-wrapper {
+	width: 1004px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+table {
+	width: 100%;
+	background-color: #ECECEC;
+	font-size: 14px;
+	box-shadow: 0 0 10px rgba(0, 0, 256, 0.2);
+	border-collapse: collapse;
+}
+
+td, tr{
+	padding: 10px;
+	text-align: center;	
+}
+
+tr:nth-child(even) {
+	background-color:#ffffff;
+}
+
+a.edit-icon {
+	height:30px;
+	width:30px;
+	border-radius: 50%;
+	margin: 0 auto;
+	background: transparent url('../images/edit-16.png') no-repeat center;
+	cursor: pointer;
+	display: block;
+}
+
+a.edit-icon:hover, a.delete-icon:hover {
+	background-color:grey;
+}
+
+a.delete-icon {
+	height:30px;
+	width:30px;
+	border-radius: 50%;
+	margin: 0 auto;
+	background: transparent url('../images/delete-16.png') no-repeat center;
+	cursor: pointer;
+	display: block;
+}
+
+.insert-btn {
+	height: 40px;
+	width: 100px;
+	text-decoration: none;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	background: #2C3E50;
+	color: #ffffff;
+}
+
+.content-wrapper span{
+	display: block;
+	width: 50%;
+	float: left;
+	height: 50px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.content-wrapper span:last-child {
+	text-align: right;
+}
+
+.content-wrapper span:after {
+	clear: left;
+}
+
+#form-display {
+	margin: 0 auto;
+	padding: 10px;
+	width: 500px;
+	background-color: #E4F1FE;
+	border-radius: 5px;
+}
+
+input[type=text], [type=date] {
+	margin: 20px auto;
+	width: 400px;
+	padding: 15px;
+	border: 0;
+	border-radius: 5px;
+	display: block;
+}
+
+input[type=text]:focus, [type=date]:focus {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+input[type=button] {
+	border: 0;
+	margin: 10px auto;
+	width: 70px;
+	height: 40px;
+	text-align: center;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #2980b9;
+	padding: 5px 10px;
+	border-radius: 3px;
+	display: block;
+	cursor: pointer;
+}
