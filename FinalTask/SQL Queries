@@ -1,0 +1,20 @@
+mysql -u root -p
+password: nopass
+
+show databases;
+
+use BankManagement;
+
+create table usercontact(
+	id int auto_increment primary key,
+	accountNumber varchar(15),
+	firstName varchar(256),
+	lastName varchar(256),
+	dateOfBirth date,
+	phoneNumber varchar(20),
+	email varchar(256)
+);
+
+insert into usercontact values(null, '1234567890', 'Sarulatha', 'Shanmugam', '1996-11-21', '8220855738', 'sarulatha@gmail.com');
+
+select * from usercontact;
